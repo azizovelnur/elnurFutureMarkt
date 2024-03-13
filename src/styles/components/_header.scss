@@ -1,0 +1,39 @@
+@import "../variables";
+
+.header {
+    font-family: "Montserrat", sans-serif;
+
+    &__logo {
+        font-weight: 600;
+        // width: 170px;
+    }
+    &__items {
+        display: flex;
+        height: 40px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__phone {
+        font-weight: 600;
+        // width: 205px;
+    }
+}
+
+.navigation {
+    &__items {
+        display: flex;
+    }
+    li {
+        margin-left: 30px;
+    }
+    li:first-child {
+        margin-left: 0px;
+    }
+
+    a {
+        font-size: 14px;
+        font-weight: 400;
+        color: $text-color;
+    }
+}

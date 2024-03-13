@@ -1,0 +1,9 @@
+@import "./config/reset";
+@import "./config/fonts";
+@import "./base/common";
+@import "./variables";
+@import "./components/allComponents";
+
+body {
+  color: $text-color;
+}
