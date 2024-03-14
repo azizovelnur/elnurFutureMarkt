@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import phoneIcon from "../assets/images/phoneIcon.svg";
 
 export const Header: React.FC = () => {
   return (
@@ -28,7 +29,10 @@ export const Header: React.FC = () => {
               </li>
             </ul>
           </nav>
-          <div className="header__phone">8-345-123-34-45</div>
+          <div className="header__phone">
+            <img src={phoneIcon} alt="phoneIcon" />
+            <p>8-345-123-34-45</p>
+          </div>
         </div>
       </div>
     </header>

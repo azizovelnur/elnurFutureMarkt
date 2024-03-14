@@ -4,9 +4,30 @@
     font-family: "Montserrat", sans-serif;
 
     &__logo {
+        font-size: 18px;
         font-weight: 600;
-        // width: 170px;
+        width: 169x;
+        position: relative;
     }
+
+    &__logo::before,
+    &__logo::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: white;
+    }
+
+    &__logo::before {
+        top: -4px;
+    }
+
+    &__logo::after {
+        bottom: -4px;
+    }
+
     &__items {
         display: flex;
         height: 40px;
@@ -15,13 +36,20 @@
     }
 
     &__phone {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         font-weight: 600;
-        // width: 205px;
+        font-size: 18px;
+        width: 205px;
     }
 }
 
 .navigation {
     &__items {
+        font-size: 14px;
+        width: 608px;
+        height: 17px;
         display: flex;
     }
     li {
@@ -32,7 +60,6 @@
     }
 
     a {
-        font-size: 14px;
         font-weight: 400;
         color: $text-color;
     }

@@ -1,9 +1,13 @@
 @import "./config/reset";
 @import "./config/fonts";
 @import "./base/common";
+@import "./base/mixins";
 @import "./variables";
 @import "./components/allComponents";
 
 body {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   color: $text-color;
 }
