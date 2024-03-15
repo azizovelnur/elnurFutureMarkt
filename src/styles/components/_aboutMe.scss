@@ -1,129 +1,121 @@
-.consultingWrapper {
+.consulting-wrapper {
     display: flex;
     justify-content: space-between;
-}
+    .consulting {
+        margin-top: 176px;
+        width: 800px;
+        height: 401px;
 
-.margin-block {
-    margin-right: 86px;
-}
-
-.consulting {
-    margin-top: 176px;
-    width: 800px;
-    height: 401px;
-
-    &__title {
-        width: 747px;
-        height: 165px;
-        font-size: 65px;
-        font-weight: 600;
-        line-height: 135%;
-        text-transform: uppercase;
-    }
-
-    &__subtitle {
-        width: 675px;
-        height: 48px;
-        position: relative;
-        margin-top: 53px;
-        margin-left: 23px;
-        &-text {
-            font-size: 16px;
-            line-height: 150%;
-            opacity: 0.5;
-        }
-    }
-
-    &__subtitle::before {
-        content: "";
-        position: absolute;
-        top: 5px;
-        left: -23px;
-        height: 39px;
-        width: 1px;
-        background-color: white;
-    }
-
-    &__buttons {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 64px;
-    }
-
-    &__btn {
-        @include btn-common;
-    }
-    &__btn::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 310px;
-        width: 2px;
-        height: 100%;
-        background-color: #0b3461;
-    }
-
-    &__btnFree {
-        @include btn-common;
-        color: $text-color;
-        background: transparent;
-        border: 1px solid white;
-    }
-
-    &__btnFree::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 310px;
-        width: 1px;
-        height: 100%;
-        background-color: white;
-    }
-
-    &__additionalInformation {
-        margin-top: 115px;
-        display: flex;
-    }
-
-    .quantity,
-    .percent {
-        position: relative;
-        width: 190px;
-        height: 137px;
-        margin-left: 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-right: 230px;
-
-        padding: 0 0 10px;
-        &__number {
-            font-family: "Montserrat", sans-serif;
+        &__title {
+            width: 747px;
+            height: 165px;
+            font-size: 65px;
             font-weight: 600;
-            font-size: 40px;
+            line-height: 135%;
+            text-transform: uppercase;
         }
 
-        &__text {
-            font-family: "Raleway", sans-serif;
-            font-size: 16px;
-            opacity: 0.5;
-            line-height: 122%;
-            width: 166px;
+        &__subtitle {
+            width: 675px;
+            height: 48px;
+            position: relative;
+            margin-top: 53px;
+            margin-left: 23px;
+            &-text {
+                font-size: 16px;
+                line-height: 150%;
+                opacity: 0.5;
+            }
+        }
+
+        &__subtitle::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: -23px;
+            height: 39px;
+            width: 1px;
+            background-color: white;
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 64px;
+            &-btn {
+                @include btn-common;
+            }
+            &-btn::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 310px;
+                width: 2px;
+                height: 100%;
+                background-color: #0b3461;
+            }
+            &-btnfree {
+                @include btn-common;
+                color: $text-color;
+                background: transparent;
+                border: 1px solid white;
+            }
+            &-btnfree::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 310px;
+                width: 1px;
+                height: 100%;
+                background-color: white;
+            }
+        }
+
+        &__additional-information {
+            margin-top: 115px;
+            display: flex;
+
+            .consulting__quantity,
+            .consulting__percent {
+                position: relative;
+                width: 190px;
+                height: 137px;
+                margin-left: 24px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-right: 230px;
+
+                padding: 0 0 10px;
+                &-number {
+                    font-family: "Montserrat", sans-serif;
+                    font-weight: 600;
+                    font-size: 40px;
+                }
+
+                &-text {
+                    font-family: "Raleway", sans-serif;
+                    font-size: 16px;
+                    opacity: 0.5;
+                    line-height: 122%;
+                    width: 166px;
+                }
+            }
+
+            .consulting__quantity::before,
+            .consulting__percent::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -24px;
+                height: 100%;
+                width: 1px;
+                background-color: rgba(255, 255, 255, 0.61);
+            }
+        }
+        &__mentor-img {
+            margin-top: 58px;
+            margin-left: 86px;
         }
     }
-
-    .quantity::before,
-    .percent::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -24px;
-        height: 100%;
-        width: 1px;
-        background-color: rgba(255, 255, 255, 0.61);
-    }
-}
-
-.mentor {
-    margin-top: 58px;
 }
