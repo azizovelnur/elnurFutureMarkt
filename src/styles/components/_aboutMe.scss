@@ -1,5 +1,10 @@
 .consultingWrapper {
     display: flex;
+    justify-content: space-between;
+}
+
+.margin-block {
+    margin-right: 86px;
 }
 
 .consulting {
@@ -12,26 +17,28 @@
         height: 165px;
         font-size: 65px;
         font-weight: 600;
+        line-height: 135%;
         text-transform: uppercase;
     }
 
-    &__subtext {
-        position: relative;
-        margin-top: 53px;
-        font-size: 16px;
+    &__subtitle {
         width: 675px;
         height: 48px;
-        margin-left: 40px;
-        span {
+        position: relative;
+        margin-top: 53px;
+        margin-left: 23px;
+        &-text {
+            font-size: 16px;
+            line-height: 150%;
             opacity: 0.5;
         }
     }
 
-    &__subtext::before {
+    &__subtitle::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: -40px;
+        top: 5px;
+        left: -23px;
         height: 39px;
         width: 1px;
         background-color: white;
@@ -49,8 +56,14 @@
         border: none;
         cursor: pointer;
 
+        .btnArrow {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+        }
+
         span {
-            margin-right: 30px;
+            margin-right: 80px;
         }
     }
     &__btn::after {
@@ -72,8 +85,14 @@
         cursor: pointer;
         border: 1px solid white;
 
+        .btnArrow {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+        }
+
         span {
-            margin-right: 30px;
+            margin-right: 80px;
         }
     }
 
@@ -96,12 +115,13 @@
         position: relative;
         width: 190px;
         height: 137px;
-        margin-left: 40px;
+        margin-left: 24px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         margin-right: 230px;
 
+        padding: 0 0 10px;
         &__number {
             font-family: "Montserrat", sans-serif;
             font-weight: 600;
@@ -112,6 +132,8 @@
             font-family: "Raleway", sans-serif;
             font-size: 16px;
             opacity: 0.5;
+            line-height: 122%;
+            width: 166px;
         }
     }
 
@@ -119,16 +141,17 @@
         content: "";
         position: absolute;
         top: 0;
-        left: -40px;
+        left: -24px;
         height: 100%;
         width: 1px;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.61);
     }
 
     .percent {
         position: relative;
         width: 190px;
         height: 137px;
+        padding: 0 0 10px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -142,6 +165,7 @@
             font-family: "Raleway", sans-serif;
             font-size: 16px;
             opacity: 0.5;
+            line-height: 122%;
         }
     }
 
@@ -149,13 +173,13 @@
         content: "";
         position: absolute;
         top: 0;
-        left: -40px;
+        left: -24px;
         height: 100%;
         width: 1px;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.61);
     }
 }
 
-// .mentor {
-//     margin-top: 58px;
-// }
+.mentor {
+    margin-top: 58px;
+}

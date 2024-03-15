@@ -4,9 +4,10 @@
     font-family: "Montserrat", sans-serif;
 
     &__logo {
-        font-size: 18px;
+        font-family: "Raleway", sans-serif;
+        font-size: 20px;
         font-weight: 600;
-        width: 169x;
+        width: 169px;
         position: relative;
     }
 
@@ -21,11 +22,11 @@
     }
 
     &__logo::before {
-        top: -4px;
+        top: -5px;
     }
 
     &__logo::after {
-        bottom: -4px;
+        bottom: -5px;
     }
 
     &__items {

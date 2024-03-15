@@ -3,9 +3,9 @@ import { Header } from "./Header";
 
 export const Layout: React.FC = () => {
   return (
-    <div className="background">
+    <>
       <Header />
       <Outlet />
-    </div>
+    </>
   );
 };
