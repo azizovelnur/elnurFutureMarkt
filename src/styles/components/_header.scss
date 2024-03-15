@@ -3,7 +3,7 @@
 .header {
     font-family: "Montserrat", sans-serif;
 
-    &__logo {
+    .logo {
         font-family: "Raleway", sans-serif;
         font-size: 20px;
         font-weight: 600;
@@ -11,8 +11,8 @@
         position: relative;
     }
 
-    &__logo::before,
-    &__logo::after {
+    .logo::before,
+    .logo::after {
         content: "";
         position: absolute;
         left: 0;
@@ -21,11 +21,11 @@
         background-color: white;
     }
 
-    &__logo::before {
+    .logo::before {
         top: -5px;
     }
 
-    &__logo::after {
+    .logo::after {
         bottom: -5px;
     }
 
@@ -37,31 +37,34 @@
     }
 
     &__phone {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: 600;
         font-size: 18px;
         width: 205px;
-    }
-}
 
-.navigation {
-    &__items {
-        font-size: 14px;
-        width: 608px;
-        height: 17px;
-        display: flex;
-    }
-    li {
-        margin-left: 30px;
-    }
-    li:first-child {
-        margin-left: 0px;
+        &-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: $text-color;
+        }
     }
 
-    a {
-        font-weight: 400;
-        color: $text-color;
+    &__navigation {
+        &-items {
+            font-size: 14px;
+            width: 608px;
+            height: 17px;
+            display: flex;
+        }
+        &-item {
+            margin-left: 30px;
+            &:first-child {
+                margin-left: 0px;
+            }
+        }
+        &-link {
+            font-weight: 400;
+            color: $text-color;
+        }
     }
 }

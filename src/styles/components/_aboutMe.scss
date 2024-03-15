@@ -51,20 +51,7 @@
     }
 
     &__btn {
-        @include btn;
-        position: relative;
-        border: none;
-        cursor: pointer;
-
-        .btnArrow {
-            position: absolute;
-            bottom: 12px;
-            right: 12px;
-        }
-
-        span {
-            margin-right: 80px;
-        }
+        @include btn-common;
     }
     &__btn::after {
         content: "";
@@ -77,23 +64,10 @@
     }
 
     &__btnFree {
-        @include btn;
-        position: relative;
-        border: none;
-        color: white;
+        @include btn-common;
+        color: $text-color;
         background: transparent;
-        cursor: pointer;
         border: 1px solid white;
-
-        .btnArrow {
-            position: absolute;
-            bottom: 12px;
-            right: 12px;
-        }
-
-        span {
-            margin-right: 80px;
-        }
     }
 
     &__btnFree::after {
@@ -111,7 +85,8 @@
         display: flex;
     }
 
-    .quantity {
+    .quantity,
+    .percent {
         position: relative;
         width: 190px;
         height: 137px;
@@ -137,38 +112,7 @@
         }
     }
 
-    .quantity::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -24px;
-        height: 100%;
-        width: 1px;
-        background-color: rgba(255, 255, 255, 0.61);
-    }
-
-    .percent {
-        position: relative;
-        width: 190px;
-        height: 137px;
-        padding: 0 0 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        &__number {
-            font-family: "Montserrat", sans-serif;
-            font-weight: 600;
-            font-size: 40px;
-        }
-
-        &__text {
-            font-family: "Raleway", sans-serif;
-            font-size: 16px;
-            opacity: 0.5;
-            line-height: 122%;
-        }
-    }
-
+    .quantity::before,
     .percent::before {
         content: "";
         position: absolute;

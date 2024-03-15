@@ -1,7 +1,20 @@
-@mixin btn {
+@mixin btn-common {
+    position: relative;
+    border: none;
+    cursor: pointer;
     width: 380px;
     height: 71px;
     font-size: 18px;
     font-weight: 600;
     font-family: "Raleway", sans-serif;
+
+    .btnArrow {
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+    }
+
+    span {
+        margin-right: 80px;
+    }
 }
