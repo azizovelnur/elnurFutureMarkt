@@ -5,8 +5,10 @@ export const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="container">
-        <div className="header__items">
-          <div className="logo">ALEX. SHEVTSOV</div>
+        <div className="header__inner">
+          <NavLink to="/" className="logo">
+            ALEX. SHEVTSOV
+          </NavLink>
           <nav className="header__navigation">
             <ul className="header__navigation-items">
               <li className="header__navigation-item">
