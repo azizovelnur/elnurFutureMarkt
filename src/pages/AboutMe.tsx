@@ -1,8 +1,12 @@
 import mentor from "../assets/images/mentor.png";
 import btnArrow from "../assets/images/btnArrow.svg";
 import btnArrowWhite from "../assets/images/btnArrowWhite.svg";
+import { useState } from "react";
+import { SidebarForm } from "../components/SidebarForm";
 
 export const AboutMe: React.FC = () => {
+  const [active, setActive] = useState<boolean>(false);
+
   return (
     <div className="container">
       <main className="consulting-wrapper">
@@ -20,15 +24,31 @@ export const AboutMe: React.FC = () => {
           </p>
 
           <div className="consulting__buttons">
-            <button className="consulting__buttons-btn">
+            <button
+              onClick={() => {
+                setActive(!active);
+                window.scrollTo({ top: 0 });
+              }}
+              className="consulting__buttons-btn"
+            >
               <span>Записаться на консультацию</span>
               <img className="btnArrow" src={btnArrow} alt="" />
             </button>
-            <button className="consulting__buttons-btnfree">
+            <button
+              onClick={() => {
+                setActive(!active);
+                window.scrollTo({ top: 0 });
+              }}
+              className="consulting__buttons-btnfree"
+            >
               <span>Бесплатная консультация</span>
               <img className="btnArrow" src={btnArrowWhite} alt="" />
             </button>
           </div>
+
+          <SidebarForm active={active} setActive={setActive} />
+
+          {active && <div className="blur"></div>}
 
           <div className="consulting__additional-information">
             <div className="consulting__quantity">
