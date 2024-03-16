@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import closeBtnIcon from "../assets/images/closeBtn.svg";
+import btnArrowWhite from "../assets/images/btnArrowWhite.svg";
 
 type SidebarFormProps = {
   active: boolean;
@@ -25,10 +27,48 @@ export const SidebarForm: React.FC<SidebarFormProps> = ({
     }
   }, [active]);
 
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(event.target.checked);
+  };
+
   return (
-    <aside className={`sidebar-form ${active ? "active" : ""}`}>
-      <button onClick={() => setActive(false)}>close</button>
-      SidebarForm
+    <aside className={`sidebar ${active ? "active" : ""}`}>
+      <form className="form" action="">
+        <img
+          className="sidebar__close-btn"
+          onClick={() => setActive(false)}
+          src={closeBtnIcon}
+          alt="closeIcon"
+        />
+        <h2 className="form__title">Закажите обратный звонок</h2>
+
+        <div className="form__input">
+          <input className="form__input-name" placeholder="ИМЯ" type="text" />
+          <input
+            className="form__input-phone"
+            placeholder="ТЕЛЕФОН"
+            type="text"
+          />
+        </div>
+        <label className="toggle">
+          <input
+            className="toggle__input"
+            type="checkbox"
+            checked={isChecked}
+            onChange={handleCheckboxChange}
+          />
+          <div className="toggle__checkbox-btn"></div>
+          <div className="toggle__text">
+            Согласен на сохранение и обработку персональных данных
+          </div>
+        </label>
+        <button className="form__btn" disabled={!isChecked}>
+          <span>Заказать обратный звонок</span>
+          <img className="btnArrow" src={btnArrowWhite} alt="" />
+        </button>
+      </form>
     </aside>
   );
 };

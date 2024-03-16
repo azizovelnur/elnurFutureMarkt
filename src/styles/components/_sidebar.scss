@@ -1,4 +1,4 @@
-.sidebar-form {
+.sidebar {
     width: 612px;
     height: 100vh;
     position: fixed;
@@ -7,10 +7,127 @@
     background-color: #0f1d45;
     transition: left 0.5s ease;
     z-index: 999;
-}
+    padding-top: 40px;
+    padding-left: 76px;
+    padding-right: 32px;
 
-.sidebar-form.active {
-    left: 0;
+    &.active {
+        left: 0;
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+    }
+    .form {
+        position: relative;
+        height: 732px;
+        width: 505px;
+
+        padding-top: 50px;
+
+        &__title {
+            font-family: "Raleway", sans-serif;
+            font-weight: 600;
+            line-height: 74px;
+            font-size: 50px;
+            width: 490px;
+            height: 148px;
+            margin-left: 14px;
+        }
+
+        &__btn {
+            margin-top: 89px;
+            @include btn-common;
+            color: $text-color;
+            background: transparent;
+            border: 1px solid white;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 310px;
+                width: 1px;
+                height: 100%;
+                background-color: white;
+            }
+        }
+
+        .sidebar__close-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        &__input {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 142px;
+            margin-top: 80px;
+
+            &-name,
+            &-phone {
+                height: 36px;
+                width: 480px;
+                background: transparent;
+                outline: none;
+                border: none;
+                color: white;
+                font-size: 20px;
+                font-family: "Montserrat", sans-serif;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+                padding-bottom: 15px;
+            }
+
+            &-name::placeholder,
+            &-phone::placeholder {
+                color: #bdbdbd;
+            }
+        }
+        .toggle {
+            margin-top: 110px;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+            height: 42px;
+            width: 395px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+
+            &__checkbox-btn {
+                width: 30px;
+                height: 30px;
+                border: 1px solid white;
+                position: relative;
+
+                &::before {
+                    content: "\2713";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 26px;
+                    opacity: 0;
+                    transition: 0.3s;
+                }
+            }
+
+            &__input {
+                display: none;
+            }
+
+            &__text {
+                width: 340px;
+                line-height: 128%;
+            }
+        }
+        .toggle__input:checked + .toggle__checkbox-btn::before {
+            opacity: 1;
+        }
+    }
 }
 
 .blur {
