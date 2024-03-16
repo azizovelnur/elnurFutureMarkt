@@ -26,7 +26,7 @@ export const AboutMe: React.FC = () => {
           <div className="consulting__buttons">
             <button
               onClick={() => {
-                setActive(!active);
+                setActive(true);
                 window.scrollTo({ top: 0 });
               }}
               className="consulting__buttons-btn"
@@ -36,7 +36,7 @@ export const AboutMe: React.FC = () => {
             </button>
             <button
               onClick={() => {
-                setActive(!active);
+                setActive(true);
                 window.scrollTo({ top: 0 });
               }}
               className="consulting__buttons-btnfree"
