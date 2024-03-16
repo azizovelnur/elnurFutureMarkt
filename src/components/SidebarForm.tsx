@@ -42,7 +42,11 @@ export const SidebarForm: React.FC<SidebarFormProps> = ({
   };
 
   return (
-    <aside className={`sidebar ${active ? "active" : ""}`}>
+    <aside
+      className={`sidebar ${active ? "active" : ""} ${
+        formSubmitted ? "confirmation-active" : ""
+      }`}
+    >
       <img
         className="sidebar__close-btn"
         onClick={() => setActive(false)}

@@ -129,64 +129,6 @@
     }
 }
 
-.requiest-confirmation {
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-
-    &__inner {
-        height: 650px;
-        width: 460px;
-        padding-top: 150px;
-    }
-
-    &__thanks {
-        font-size: 50px;
-        line-height: 157%;
-        height: 158px;
-        width: 227px;
-        margin: 0 auto;
-    }
-    &__promise {
-        font-size: 40px;
-        line-height: 145%;
-        height: 168px;
-        width: 447px;
-        margin-top: 96px;
-        text-align: center;
-    }
-
-    .logo {
-        font-family: "Raleway", sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-        width: 169px;
-        position: relative;
-        cursor: pointer;
-        color: $text-color;
-        position: absolute;
-        bottom: 80px;
-        right: 74px;
-    }
-
-    .logo::before,
-    .logo::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background-color: white;
-    }
-
-    .logo::before {
-        top: -5px;
-    }
-
-    .logo::after {
-        bottom: -5px;
-    }
-}
-
 .blur {
     width: 100vw;
     height: 100vh;
