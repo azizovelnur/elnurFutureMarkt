@@ -51,22 +51,91 @@
         }
     }
 
-    &__navigation {
-        &-items {
-            font-size: 14px;
-            width: 608px;
-            height: 17px;
-            display: flex;
-        }
-        &-item {
-            margin-left: 30px;
-            &:first-child {
-                margin-left: 0px;
+    &__menu {
+        display: none;
+    }
+
+    @media (min-width: 1040px) {
+        &__navigation {
+            &-items {
+                font-size: 14px;
+                width: 608px;
+                height: 17px;
+                display: flex;
+            }
+            &-item {
+                margin-left: 30px;
+                &:first-child {
+                    margin-left: 0px;
+                }
+            }
+            &-link {
+                font-weight: 400;
+                color: $text-color;
+            }
+
+            button {
+                display: none;
             }
         }
-        &-link {
-            font-weight: 400;
-            color: $text-color;
+    }
+
+    @media (max-width: 1040px) {
+        &__navigation {
+            display: none;
+        }
+        &__phone {
+            display: none;
+        }
+        &__menu {
+            height: 40px;
+            display: flex;
+
+            &-btn {
+                margin-right: 8px;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+        &__navigation {
+            display: block;
+            background-color: #0f1d45;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            padding-top: 40px;
+            z-index: 999;
+            transition: right 0.5s ease;
+            &.active {
+                right: 0;
+            }
+
+            &-items {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            &-item {
+                margin-bottom: 20px;
+            }
+
+            &-close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+            &-link {
+                color: white;
+                font-size: 18px;
+            }
         }
     }
 }
