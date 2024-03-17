@@ -79,63 +79,62 @@
             }
         }
     }
+}
+@media (max-width: 1040px) {
+    .header__navigation {
+        display: none;
+    }
+    .header__phone {
+        display: none;
+    }
+    .header__menu {
+        height: 40px;
+        display: flex;
 
-    @media (max-width: 1040px) {
-        &__navigation {
-            display: none;
+        &-btn {
+            margin-right: 8px;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
-        &__phone {
-            display: none;
+    }
+
+    .header__navigation {
+        display: block;
+        background-color: #0f1d45;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        padding-top: 40px;
+        z-index: 999;
+        transition: right 0.5s ease;
+        &.active {
+            right: 0;
         }
-        &__menu {
-            height: 40px;
+
+        &-items {
             display: flex;
-
-            &-btn {
-                margin-right: 8px;
-                background: none;
-                border: none;
-                cursor: pointer;
-            }
+            flex-direction: column;
+            align-items: center;
         }
 
-        &__navigation {
-            display: block;
-            background-color: #0f1d45;
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            height: 100vh;
-            padding-top: 40px;
-            z-index: 999;
-            transition: right 0.5s ease;
-            &.active {
-                right: 0;
-            }
+        &-item {
+            margin-bottom: 20px;
+        }
 
-            &-items {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            &-item {
-                margin-bottom: 20px;
-            }
-
-            &-close {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                background: none;
-                border: none;
-                cursor: pointer;
-            }
-            &-link {
-                color: white;
-                font-size: 18px;
-            }
+        &-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        &-link {
+            color: white;
+            font-size: 18px;
         }
     }
 }

@@ -1,11 +1,56 @@
 import mentor from "../assets/images/mentor.png";
 import btnArrow from "../assets/images/btnArrow.svg";
 import btnArrowWhite from "../assets/images/btnArrowWhite.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SidebarForm } from "../components/SidebarForm";
+
+type TextState = {
+  subtitleText: string;
+  buttonText: string;
+  buttonFreeText: string;
+  quantityText: string;
+  percentText: string;
+};
 
 export const AboutMe: React.FC = () => {
   const [active, setActive] = useState<boolean>(false);
+
+  const [textState, setTextState] = useState<TextState>({
+    subtitleText: "",
+    buttonText: "",
+    buttonFreeText: "",
+    quantityText: "",
+    percentText: "",
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 320 || window.innerWidth <= 1200) {
+        setTextState({
+          subtitleText: "Ваш успех зависит от ваших действий",
+          buttonText: "Записаться",
+          buttonFreeText: "Заказать звонок",
+          quantityText: "техники",
+          percentText: "продуктивности",
+        });
+      } else {
+        setTextState({
+          subtitleText:
+            "Когда ваше время и энергия лучше сфокусированы, стремление к новым возможностям становится реальностью, ваш успех зависит от ваших действий",
+          buttonText: "Записаться на консультацию",
+          buttonFreeText: "Бесплатная консультация",
+          quantityText: "техник для достижения целей",
+          percentText: "увеличение личной продуктивности",
+        });
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="container">
@@ -17,9 +62,7 @@ export const AboutMe: React.FC = () => {
 
           <p className="consulting__subtitle">
             <span className="consulting__subtitle-text">
-              Когда ваше время и энергия лучше сфокусированы, стремление к новым
-              возможностям становится реальностью, ваш успех зависит от ваших
-              действий
+              {textState.subtitleText}
             </span>
           </p>
 
@@ -31,7 +74,7 @@ export const AboutMe: React.FC = () => {
               }}
               className="consulting__buttons-btn"
             >
-              <span>Записаться на консультацию</span>
+              <span>{textState.buttonText}</span>
               <img className="btnArrow" src={btnArrow} alt="" />
             </button>
             <button
@@ -41,7 +84,7 @@ export const AboutMe: React.FC = () => {
               }}
               className="consulting__buttons-btnfree"
             >
-              <span>Бесплатная консультация</span>
+              <span>{textState.buttonFreeText}</span>
               <img className="btnArrow" src={btnArrowWhite} alt="" />
             </button>
           </div>
@@ -54,13 +97,13 @@ export const AboutMe: React.FC = () => {
             <div className="consulting__quantity">
               <div className="consulting__quantity-number">130+</div>
               <p className="consulting__quantity-text">
-                техник для достижения целей
+                {textState.quantityText}
               </p>
             </div>
             <div className="consulting__percent">
               <div className="consulting__percent-number">250%</div>
               <p className="consulting__percent-text">
-                увеличение личной продуктивности
+                {textState.percentText}
               </p>
             </div>
           </div>
