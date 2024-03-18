@@ -4,6 +4,8 @@
     position: fixed;
     top: 0;
     left: -612px;
+    overflow-y: auto;
+    overflow-x: hidden;
     background-color: #0f1d45;
     transition: left 0.5s ease;
     z-index: 999;

@@ -20,3 +20,10 @@ body {
   background-repeat: no-repeat;
   padding-top: 39px;
 }
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #133457;
+}
