@@ -81,9 +81,6 @@
     }
 }
 @media (max-width: 1040px) {
-    .header__navigation {
-        display: none;
-    }
     .header__phone {
         display: none;
     }
@@ -100,7 +97,6 @@
     }
 
     .header__navigation {
-        display: block;
         background-color: #0f1d45;
         position: fixed;
         top: 0;
