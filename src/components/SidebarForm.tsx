@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import closeBtnIcon from "../assets/images/closeBtn.svg";
-import btnArrowWhite from "../assets/images/btnArrowWhite.svg";
+import btnArrowSidebar from "../assets/images/btnArrowSidebar.svg";
 import { RequestConfirmation } from "./RequestConfirmation";
 
 type SidebarFormProps = {
@@ -96,7 +96,7 @@ export const SidebarForm: React.FC<SidebarFormProps> = ({
           </label>
           <button className="form__btn" disabled={!isChecked}>
             <span>Заказать обратный звонок</span>
-            <img className="btnArrow" src={btnArrowWhite} alt="" />
+            <img className="btnArrow" src={btnArrowSidebar} alt="" />
           </button>
         </form>
       ) : (
