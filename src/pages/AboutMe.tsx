@@ -3,6 +3,7 @@ import btnArrow from "../assets/images/btnArrow.svg";
 import btnArrowWhite from "../assets/images/btnArrowWhite.svg";
 import { useEffect, useState } from "react";
 import { SidebarForm } from "../components/SidebarForm";
+import axios from "axios";
 
 type TextState = {
   subtitleText: string;
@@ -14,6 +15,8 @@ type TextState = {
 
 export const AboutMe: React.FC = () => {
   const [active, setActive] = useState<boolean>(false);
+  const [gbpRate, setGbpRate] = useState<number>(0);
+  const [dateSum, setDateSum] = useState<number>(0);
 
   const [textState, setTextState] = useState<TextState>({
     subtitleText: "",
@@ -22,6 +25,37 @@ export const AboutMe: React.FC = () => {
     quantityText: "",
     percentText: "",
   });
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const dateString = currentDate.toLocaleDateString();
+    let sum = 0;
+    for (let i = 0; i < dateString.length; i++) {
+      const char = dateString.charAt(i);
+      if (!isNaN(parseInt(char))) {
+        sum += parseInt(char);
+      }
+    }
+    setDateSum(sum);
+  }, []);
+
+  useEffect(() => {
+    const getGbpRate = async () => {
+      try {
+        const response = await axios.get(
+          "https://www.cbr-xml-daily.ru/daily_json.js"
+        );
+        const data = response.data;
+        const gbpRate = data.Valute.GBP.Value;
+        const roundedValue = Math.round(gbpRate);
+        setGbpRate(roundedValue);
+      } catch (error) {
+        console.error("Error fetching GBP rate:", error);
+      }
+    };
+
+    getGbpRate();
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -73,6 +107,7 @@ export const AboutMe: React.FC = () => {
                 window.scrollTo({ top: 0 });
               }}
               className="consulting__buttons-btn"
+              tabIndex={1}
             >
               <span>{textState.buttonText}</span>
               <img className="btnArrow" src={btnArrow} alt="" />
@@ -83,6 +118,7 @@ export const AboutMe: React.FC = () => {
                 window.scrollTo({ top: 0 });
               }}
               className="consulting__buttons-btnfree"
+              tabIndex={2}
             >
               <span>{textState.buttonFreeText}</span>
               <img className="btnArrow" src={btnArrowWhite} alt="" />
@@ -95,13 +131,13 @@ export const AboutMe: React.FC = () => {
 
           <div className="consulting__additional-information">
             <div className="consulting__quantity">
-              <div className="consulting__quantity-number">130+</div>
+              <div className="consulting__quantity-number">{dateSum}+</div>
               <p className="consulting__quantity-text">
                 {textState.quantityText}
               </p>
             </div>
             <div className="consulting__percent">
-              <div className="consulting__percent-number">250%</div>
+              <div className="consulting__percent-number">{gbpRate}%</div>
               <p className="consulting__percent-text">
                 {textState.percentText}
               </p>

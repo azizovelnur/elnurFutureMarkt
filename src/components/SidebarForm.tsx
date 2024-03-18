@@ -12,6 +12,13 @@ export const SidebarForm: React.FC<SidebarFormProps> = ({
   active,
   setActive,
 }) => {
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const [name, setName] = useState<string>(localStorage.getItem("name") || "");
+  const [phone, setPhone] = useState<string>(
+    localStorage.getItem("phone") || ""
+  );
+
   const blurBackground = () => {
     document.body.style.overflow = "hidden";
   };
@@ -28,16 +35,17 @@ export const SidebarForm: React.FC<SidebarFormProps> = ({
     }
   }, [active]);
 
-  const [isChecked, setIsChecked] = useState<boolean>(false);
-
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked);
   };
 
-  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (name.trim() === "" || phone.trim() === "" || !isChecked) {
+      return;
+    }
+    localStorage.setItem("name", name);
+    localStorage.setItem("phone", phone);
     setFormSubmitted(true);
   };
 
@@ -59,9 +67,17 @@ export const SidebarForm: React.FC<SidebarFormProps> = ({
           <h2 className="form__title">Закажите обратный звонок</h2>
 
           <div className="form__input">
-            <input className="form__input-name" placeholder="ИМЯ" type="text" />
+            <input
+              className="form__input-name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="ИМЯ"
+              type="text"
+            />
             <input
               className="form__input-phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               placeholder="ТЕЛЕФОН"
               type="text"
             />
