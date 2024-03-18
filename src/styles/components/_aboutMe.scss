@@ -150,11 +150,6 @@
                 .consulting__quantity {
                     margin-right: 30px;
                 }
-                .consulting__percent {
-                }
-                .consulting__quantity::before,
-                .consulting__percent::before {
-                }
             }
         }
     }
@@ -234,17 +229,20 @@
     #root {
         overflow: hidden;
     }
+
     .consulting-wrapper {
-        // overflow: hidden;
         .consulting {
             min-width: 200px;
+            margin-top: 0px;
             &__title {
+                margin-top: 65px;
                 width: 252px;
                 height: 97px;
                 font-size: 25px;
             }
 
             &__subtitle {
+                margin-top: 35px;
                 height: 34px;
                 width: 160px;
                 line-height: 150%;
@@ -259,14 +257,16 @@
                     left: -10px;
                 }
             }
-
             &__buttons {
                 width: 126px;
-                // height: 100px;
+                margin-top: 50px;
+                height: 76px;
                 flex-direction: column;
                 margin-top: 64px;
                 &-btn,
                 &-btnfree {
+                    margin-top: 0;
+                    margin-bottom: 0;
                     width: 126px;
                     height: 30px;
                     font-size: 10px;
@@ -275,15 +275,13 @@
                         width: 10px;
                     }
                 }
-
-                &-btnfree {
-                    margin-top: 30px;
-                }
             }
 
             &__additional-information {
+                margin-bottom: 0;
+                margin-top: 92px;
                 width: 185px;
-                margin-bottom: 40px;
+
                 .consulting__quantity {
                     margin-right: 39px;
                     width: 53px;
@@ -315,15 +313,14 @@
                     left: -7px;
                 }
             }
-            &__mentor-img {
-                margin-top: 0;
-                margin-left: 0;
-                transform: translateX(-74px);
-                z-index: -1;
 
+            &__mentor-img {
                 img {
-                    height: calc(432px * 1.2);
-                    width: calc(275px * 1.2);
+                    height: 432px;
+                    width: 275px;
+                    position: absolute;
+                    bottom: 7px;
+                    left: -68px;
                 }
             }
         }
