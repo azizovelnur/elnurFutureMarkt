@@ -10,7 +10,6 @@ body {
   font-size: 16px;
   font-weight: 400;
   color: $text-color;
-
   background-image: url("../assets/images/bg.jpg");
   background-color: gray;
   width: 100%;
@@ -18,8 +17,38 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-top: 39px;
 }
+
+.linesContainer {
+  position: relative;
+  max-width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.lines {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: -100;
+
+  .line {
+    position: relative;
+    &__element {
+      background-color: rgba(255, 255, 255, 0.26);
+      width: 1px;
+      position: absolute;
+      height: 100%;
+    }
+  }
+}
+
+.line2 {
+  margin-left: -20px;
+}
+
 ::-webkit-scrollbar {
   width: 2px;
 }

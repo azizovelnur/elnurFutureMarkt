@@ -9,6 +9,7 @@ export const Header: React.FC = () => {
   const [openMenu, setOpenMenu] = useState<Boolean>(false);
   return (
     <header className="header">
+      <div style={{ height: "39px" }}></div>
       <div className="container">
         <div className="header__inner">
           <NavLink to="/" className="logo">
@@ -80,7 +81,7 @@ export const Header: React.FC = () => {
                 src={phoneIcon}
                 alt="phoneIcon"
               />
-              <p>8-345-123-34-45</p>
+              <span>8-345-123-34-45</span>
             </a>
           </div>
         </div>
